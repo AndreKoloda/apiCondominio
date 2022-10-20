@@ -4,6 +4,7 @@ const database = require('../database');
 const Assembleia = database.define('assembleia',{
     id: {
         type: Sequelize.INTEGER,
+        autoIncrement: true,
         allowNull: false,
         primaryKey: true
     },
