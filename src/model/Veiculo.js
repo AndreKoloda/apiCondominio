@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 const database = require('../database');
 
 const Assembleia = database.define('assembleia',{
-    id: {
+    placa: {
         type: Sequelize.STRING,
         allowNull: false,
         primaryKey: true

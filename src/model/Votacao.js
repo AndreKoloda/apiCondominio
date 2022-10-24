@@ -14,7 +14,7 @@ const Votacao = database.define('votacao',{
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {
-            model: 'assembleia',
+            model: 'assembleias',
             key: 'id'
         }
     },

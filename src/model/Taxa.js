@@ -5,6 +5,7 @@ const database = require('../database');
 const Taxa = database.define('taxa',{
     id: {
         type: Sequelize.INTEGER,
+        autoIncrement: true,
         allowNull: false,
         primaryKey: true
     },
