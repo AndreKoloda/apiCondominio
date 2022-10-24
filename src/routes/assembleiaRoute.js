@@ -10,10 +10,10 @@ router.get('/api/assembleia/getOne', async (req, res) => {
     res.json({assembleia});
 });
 
-router.getAll('/api/assembleia/getAll', async (req, res) => {
-    const assembleias = await Usuario.findAll();
-    res.json({assembleias});
-});
+// router.getAll('/api/assembleia/getAll', async (req, res) => {
+//     const assembleias = await Usuario.findAll();
+//     res.json({assembleias});
+// });
 
 router.get('/api/assembleia/save', async (req, res) => {
     const q = url.parse(req.url, true).query;
