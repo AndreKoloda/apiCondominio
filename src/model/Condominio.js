@@ -4,6 +4,7 @@ const database = require('../database');
 const Condominio = database.define('condominio',{
     id: {
         type: Sequelize.INTEGER,
+        autoIncrement: true,
         allowNull: false,
         primaryKey: true
     },

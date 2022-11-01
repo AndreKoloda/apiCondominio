@@ -6,7 +6,7 @@ const Usuario = require('../model/Usuario');
 router.get('/api/usuario/getone', async (req, res) => {
     const q = url.parse(req.url, true).query;
     const usuario = await Usuario.findByPk(q.id);
-    res.json({usuario});
+    res.json(usuario);
 });
 
 // router.getAll('/api/usuario/getAll', async (req, res) => {
@@ -17,9 +17,9 @@ router.get('/api/usuario/getone', async (req, res) => {
 router.get('/api/usuario/save', async (req, res) => {
     const q = url.parse(req.url, true).query;
     const usuarioNovo = await Usuario.create({
-        nome: 'Andre',
-        email: 'andreckoloda@gmail.com',
-        senha: '123456'
+        nome: 'Jacke',
+        email: 'jackekoloda@gmail.com',
+        senha: '123'
     });
 
     res.json({usuarioNovo});
@@ -58,14 +58,17 @@ router.get('/api/usuario/remove', async (req, res) => {
 
 router.get('/api/usuario/validar', async (req, res) => {
     const q = url.parse(req.url, true).query;
-
-    const usuario = await Usuario.where(email == q.email);
+try{
+    const usuario = await Usuario.findOne({where: {email: q.email}});
     if (usuario){
         if (usuario.senha == q.senha){
-            return true;
+            res.json({resposta: true});
         }
     }
-    return false;
+    res.json({resposta: false});
+} catch (err) {
+    console.log({resposta: err});
+}
 })
 
 module.exports = router;

@@ -4,7 +4,7 @@ const url = require('url')
 
 const Acessos = require('../model/Acessos')
 
-router.get('/api/acessos/getOne', async (req, res) => {
+router.get('/api/acessos/getone', async (req, res) => {
     const q = url.parse(req.url, true).query;
     const acessos = await Acessos.findByPk(q.chave);
     if (acessos){

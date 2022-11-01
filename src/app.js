@@ -7,7 +7,7 @@ app.use(cors());
 
 // app.use(require('./routes/acessosRoute'));
 // app.use(require('./routes/assembleiaRoute'));
-// app.use(require('./routes/condominioRoute'));
+app.use(require('./routes/condominioRoute'));
 // app.use(require('./routes/contratoRoute'));
 // app.use(require('./routes/taxaRoute'));
 app.use(require('./routes/usuarioRoute'));

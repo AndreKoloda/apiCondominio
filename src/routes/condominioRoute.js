@@ -9,21 +9,22 @@ router.get('/api/condominio/getOne', async (req, res) => {
     res.json({condominio});
 });
 
-router.getAll('/api/condominio/getAll', async (req, res) => {
+router.get('/api/condominio/getall', async (req, res) => {
     const condominio = await Condominio.findAll();
-    res.json({condominio});
+    res.json(condominio);
 });
 
 router.get('/api/condominio/save', async (req, res) => {
-    const q = url.parse(req.url, true).query;
+    //const q = url.parse(req.url, true).query;
 
-    var condominio = await Condominio.findByPk(q.id);
+    //var condominio = await Condominio.findByPk(q.id);
 
-    if (!condominio){
+    if (1 == 1){
         const condominioNovo = await Condominio.create({
-            valor: q.valor,
-            tamanhoM2: q.tamanhoM2,
-            disponivel: q.disponivel
+            id: 3,
+            valor: 1300,
+        tamanhoM2: 35,
+        disponivel: true
         });
 
         res.json({condominioNovo});
